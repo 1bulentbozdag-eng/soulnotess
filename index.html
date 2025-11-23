@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aurelia — Web App (PWA)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d47a1">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Aurelia</div>
+      <button id="buyBtn" class="btn primary">Get Premium — $3.99</button>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <h1>Create music, quickly.</h1>
+        <p class="muted">Lightweight web demo — premium unlocks high-quality export and extra sound packs.</p>
+      </section>
+
+      <section class="features">
+        <div class="card">
+          <h3>Basic Mixer</h3>
+          <p>Free: create loops, basic effects.</p>
+        </div>
+        <div class="card locked" data-feature="hq-export">
+          <h3>HQ Export</h3>
+          <p>Export WAV/FLAC at high quality.</p>
+          <div class="lock">Locked</div>
+        </div>
+        <div class="card locked" data-feature="sound-pack">
+          <h3>Pro Sound Pack</h3>
+          <p>Extra presets & samples.</p>
+          <div class="lock">Locked</div>
+        </div>
+      </section>
+
+      <section class="status">
+        <div id="statusText">You are using the free version.</div>
+        <div class="actions">
+          <button id="restoreBtn" class="btn">Restore Purchase</button>
+          <button id="exportBtn" class="btn primary small">Export (HQ) — Premium</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <small>Built as a standalone Web app / PWA. Works in browser or inside Android WebView.</small>
+      <div class="links">Original upload: <code>/mnt/data/AureliaSource.zip</code></div>
+    </footer>
+  </div>
+
+  <!-- Purchase Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <button id="closeModal" class="modal-close" title="Close">&times;</button>
+      <h2>Upgrade to Aurelia Premium</h2>
+      <p>Unlock HQ export, extra sound packs, and no ads.</p>
+      <div class="price">$3.99 once</div>
+      <div class="modal-actions">
+        <button id="confirmBuy" class="btn primary">Buy — $3.99</button>
+        <button id="cancelBuy" class="btn">Cancel</button>
+      </div>
+      <p class="small muted">This demo uses local purchase simulation. For production, integrate a secure payment gateway and server-side verification.</p>
+    </div>
+  </div>
+
+  <script src="premium.js"></script>
+</body>
+</html>
